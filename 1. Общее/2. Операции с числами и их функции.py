@@ -27,5 +27,5 @@ print(a)
 for test in range(4):
     print(5)
 
-randomInt = random.randint(1,100000)
+randomInt = random.randint(1, 100000)
 print(randomInt)

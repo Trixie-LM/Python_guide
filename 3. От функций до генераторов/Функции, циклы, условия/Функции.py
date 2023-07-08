@@ -46,3 +46,21 @@ def test(number):
 
 
 test(10)
+
+
+# Значение параметра по умолчанию
+def my_function(country="Англии"):
+    print("Я из " + country)
+
+
+my_function()
+my_function("Польши")
+my_function("Китая")
+
+a = 2
+b = "PythonRU"
+print("{0} — целое число, а {1} — строка.".format(a, ))
+
+a = 2
+b = "PythonRU"
+print("%d — целое число, а %s — строка." % (a, b))
