@@ -6,6 +6,7 @@
 x = lambda a, b: a * b
 print(x(8, 9))
 
+
 # Силу лямбда лучше видно, когда вы используете ее как анонимную функцию внутри другой функции
 
 def myfunc(n):
@@ -21,4 +22,14 @@ print(mytripler(11))
 max_number = lambda a, b: a if a > b else b
 print(max_number(3, 5))
 
+
+def run_task(task):
+    print('Before running the task')
+    task()
+    print('After running the task')
+
+
+run_task(lambda: print('Task is complete!'))  # передача анонимной функции
+important_task = lambda: print('Important task is complete!')
+run_task(important_task)  # передача лямбда-функции
 
