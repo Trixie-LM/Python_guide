@@ -29,7 +29,8 @@ print(thisdict)
 # Доступ к элементам
 x = thisdict["model"]
 y = thisdict.get("model")
-print(x, "<-x - y->", y)
+z = thisdict.get("Unknown", "Unknown")
+print(x, "<-x - y->", y,"\nНеизвестный параметр - ", z)
 
 # Изменить значение
 thisdict["year"] = 2018
