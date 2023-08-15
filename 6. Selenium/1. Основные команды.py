@@ -5,31 +5,46 @@
 """
 import time
 from selenium import webdriver
+from selenium.webdriver import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
 
+# Настройки для Хрома
 service = Service(executable_path=ChromeDriverManager().install())
+
+# Настройки для Хрома с определенной версией драйвера
+service2 = Service(ChromeDriverManager(version="114.0.5735.90").install())
+
 driver = webdriver.Chrome(service=service)
+
+# Настройки для Firefox с определенной версией драйвера
+driver2 = webdriver.Firefox()
+
+
 
 # Открываем сайт
 driver.get("https://www.youtube.com/")
 
 time.sleep(3)
 
-"""
-    Навигация
-"""
+
 # Текущая ссылка сайта
 print("Ссылка сайта: ", driver.current_url)
+
 # Текущий тайтл страницы
 print("Название страницы: ", driver.title)
+
 # Получение кода страницы
 print("Название страницы: ", driver.page_source)
+
+
 # Возвращаемся назад
 driver.back()
+
 # Возобновляем шаг
 driver.forward()
+
 # Перезагрузка страницы
 driver.refresh()
 
@@ -58,7 +73,17 @@ print(button.get_attribute("value"))
 button.clear()
 
 # Нажать ENTER
-button.send_keys()
+button.send_keys(Keys.RETURN)
 
 # Создает список с тегами a и кликаем на 3 элемент
 button = driver.find_element("xpath", "//a")[2].click()
+
+
+"""
+    driver.window_handles - выводит список вкладок
+    driver.switch_to.window(driver.window_handles[0]) - переключение к 1 вкладке
+    driver.current_window_handle - возвращает дескриптор текущей вкладки; 
+    
+    
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") - скролл в конец страницы
+"""
