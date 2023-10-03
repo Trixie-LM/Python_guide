@@ -1,6 +1,10 @@
 import random
 
 
+# Как привильно писать функцию
+def get_array(value: int) -> list:
+    return [value, value]
+
 # 1. Умножение числа на 2
 def multiply(number):
     print(number * 2)
