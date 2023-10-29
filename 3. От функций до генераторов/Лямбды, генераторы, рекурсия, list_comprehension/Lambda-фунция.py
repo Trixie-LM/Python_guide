@@ -33,3 +33,16 @@ run_task(lambda: print('Task is complete!'))  # передача анонимн�
 important_task = lambda: print('Important task is complete!')
 run_task(important_task)  # передача лямбда-функции
 
+
+# Сортировка с Лямбдой по возрасту
+users = [
+        {"name": "Oleg", "age": 32},
+        {"name": "Sergey", "age": 24},
+        {"name": "Stanislav", "age": 15},
+        {"name": "Olga", "age": 45},
+        {"name": "Maria", "age": 18},
+    ]
+
+users.sort(key=lambda user: user['age'])
+
+print(users)

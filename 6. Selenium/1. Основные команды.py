@@ -21,6 +21,10 @@ driver = webdriver.Chrome(service=service)
 # Настройки для Firefox с определенной версией драйвера
 driver2 = webdriver.Firefox()
 
+# Выбор хром драйвера из определенного места. Нужен если хромдрайвера нет в общем доступе, как в моем случае
+service = Service('chromedriver.exe')
+driver3 = webdriver.Chrome(service=service)
+
 
 
 # Открываем сайт
