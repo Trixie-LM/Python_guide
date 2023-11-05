@@ -21,4 +21,8 @@ pytest test_simple.py --setup-plan
 Заморозка всего UI браузера
 setTimeout('debugger', 3000) в консоле
 
+
+Запуск всех тестов
+python -m pytest tests
+
 """
